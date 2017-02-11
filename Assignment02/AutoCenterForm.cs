@@ -148,14 +148,40 @@ namespace Assignment02
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            //adds total price before tax
             _basePrice = Convert.ToDecimal(BasePriceTextBox.Text);
-            _additionalPrice = Convert.ToDecimal(AdditionalPrice.Text);
+            _subTotal = _basePrice + _additionalPrice;
+            SubtotalTextBox.Text = _subTotal.ToString("C2");
 
-        }
+            //Calculate tax on order
+            _taxes = _taxRate * _subTotal;
+            SalesTaxBox.Text = _taxes.ToString("C2");
+
+            //Calculates total and posts it
+            _total = _taxes + _subTotal;
+            TotalTextBox.Text = _total.ToString("C2");
+
+            //Calculate total with trade in value
+            _tradeInValue = Convert.ToDecimal(TradeTextBox.Text);
+            _amountDue = _total - _tradeInValue;
+            AmountDueTextBox.Text = _amountDue.ToString("C2");
+            }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            BasePriceTextBox.Text = "";
+            AdditionalPrice.Text = "";
+            SubtotalTextBox.Text = "";
+            SalesTaxBox.Text = "";
+            TotalTextBox.Text = "";
+            TradeTextBox.Text = "";
+            AmountDueTextBox.Text = "";
+            StereoSystem.Checked = false;
+            LeatherInt.Checked = false;
+            ComputerNav.Checked = false;
+            StandardButton.Checked = true;
+            PearlizedButton.Checked = false;
+            CustomizedDetailingButton.Checked = false;
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Assignment02
 {
-    public partial class AutoCenterForm : Form
+    public partial class SharpAutoForm : Form
     {
         private decimal _StereoSystemPrice = 500.00m;
         private decimal _LeatherIntPrice = 1502.99m;
@@ -26,41 +27,39 @@ namespace Assignment02
         private decimal _total;
         private decimal _tradeInValue;
         private decimal _amountDue;
+        private string _autoFormLayout;
 
+        public SplashForm previousForm;
 
-        public object FormFontDialog { get; private set; }
+       
 
-        public AutoCenterForm()
+        public SharpAutoForm()
         {
             InitializeComponent();
+
+            this.AutoFormLayout = "Classic";
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+        public object FormFontDialog { get; private set; }
+        public string AutoFormLayout {
 
-        }
+            get
+            {
+                return this._autoFormLayout;
+            }
 
-        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
+            set
+            {
+                this.AutoFormLayout = value;
+                Debug.WriteLine("Auto Labels Changed");
+            }
+                
+           }
 
-        private void _exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Creates the form
-            //AboutForm aboutForm = new AboutForm();
-
-            //Show the about form with showDialog(a modal method to display the form)
-            //aboutForm.ShowDialog();
-        }
 
         //Check box calculations, uses private varibales for prices
-        private void StereoSystem_CheckedChanged(object sender, EventArgs e)
+        private void _StereoSystem_CheckedChanged(object sender, EventArgs e)
         {
             if (StereoSystem.Checked)
             {
@@ -74,7 +73,7 @@ namespace Assignment02
             }
         }
 
-        private void LeatherInt_CheckedChanged(object sender, EventArgs e)
+        private void _LeatherInt_CheckedChanged(object sender, EventArgs e)
         {
             if (LeatherInt.Checked)
             {
@@ -90,7 +89,7 @@ namespace Assignment02
 
         }
 
-        private void ComputerNav_CheckedChanged(object sender, EventArgs e)
+        private void _ComputerNav_CheckedChanged(object sender, EventArgs e)
         {
              if (ComputerNav.Checked)
             {
@@ -104,7 +103,7 @@ namespace Assignment02
             }
         }
 
-        private void StandardButton_CheckedChanged(object sender, EventArgs e)
+        private void _StandardButton_CheckedChanged(object sender, EventArgs e)
         {
             if (StandardButton.Checked)
             {
@@ -118,7 +117,7 @@ namespace Assignment02
             }
         }
 
-        private void PearlizedButton_CheckedChanged(object sender, EventArgs e)
+        private void _PearlizedButton_CheckedChanged(object sender, EventArgs e)
         {
             if (PearlizedButton.Checked)
             {
@@ -132,7 +131,7 @@ namespace Assignment02
             }
         }
 
-        private void CustomizedDetailingButton_CheckedChanged(object sender, EventArgs e)
+        private void _CustomizedDetailingButton_CheckedChanged(object sender, EventArgs e)
         {
             if (CustomizedDetailingButton.Checked)
             {
@@ -146,7 +145,7 @@ namespace Assignment02
             }
         }
 
-        private void CalculateButton_Click(object sender, EventArgs e)
+        private void _CalculateButton_Click(object sender, EventArgs e)
         {
             //adds total price before tax
             _basePrice = Convert.ToDecimal(BasePriceTextBox.Text);
@@ -167,7 +166,7 @@ namespace Assignment02
             AmountDueTextBox.Text = _amountDue.ToString("C2");
             }
 
-        private void ClearButton_Click(object sender, EventArgs e)
+        private void _ClearButton_Click(object sender, EventArgs e)
         {
             BasePriceTextBox.Text = "";
             AdditionalPrice.Text = "";
@@ -184,9 +183,57 @@ namespace Assignment02
             CustomizedDetailingButton.Checked = false;
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
+
+        private void _aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Creates the form
+            AboutForm aboutForm = new AboutForm();
+
+            //Show the about form with showDialog(a modal method to display the form)
+            aboutForm.ShowDialog();
+        }
+
+
+        private void _AutoCenterForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if(result == DialogResult.OK)
+            {
+                this.previousForm.Close();
+                
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+
+        }
+        private void _exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+                   
+        }
+
+        private void _OptionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //creates a dialog container for debug
+            DialogResult result;
+
+            //creates a new form - option form
+            OptionsForm optionsForm = new OptionsForm();
+
+            //sets a reference to previous form property
+            optionsForm.PreviousForm = this;
+
+            optionsForm.AutoFormLayout = this.AutoFormLayout;
+
+            //Shows the result dialog
+            result = optionsForm.ShowDialog();
+
+            //For debugging
+            Debug.WriteLine(result.ToString());
         }
     }
 }

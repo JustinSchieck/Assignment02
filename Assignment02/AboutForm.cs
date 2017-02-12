@@ -7,10 +7,20 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// Program: Sharp Auto Center
+/// Name: Justin Schieck
+/// StudentID: 200328630
+/// App Creation Date: Feb 02, 2013
+/// App Desc: Calculates the amount due from new or used car and choices.
+/// </summary>
+
 namespace Assignment02
 {
     partial class AboutForm : Form
     {
+
+        //Initializes the about form, preset by program.
         public AboutForm()
         {
             InitializeComponent();

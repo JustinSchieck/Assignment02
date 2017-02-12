@@ -59,11 +59,11 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._OptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._OptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FeaturesBox.SuspendLayout();
             this.FinishBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,6 +106,7 @@
             // 
             this.TotalTextBox.Location = new System.Drawing.Point(184, 488);
             this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.ReadOnly = true;
             this.TotalTextBox.Size = new System.Drawing.Size(100, 22);
             this.TotalTextBox.TabIndex = 4;
             // 
@@ -344,7 +345,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this._exitToolStripMenuItem_Click);
             // 
@@ -358,16 +359,23 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
+            // _OptionsToolStripMenuItem
+            // 
+            this._OptionsToolStripMenuItem.Name = "_OptionsToolStripMenuItem";
+            this._OptionsToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this._OptionsToolStripMenuItem.Text = "&Options";
+            this._OptionsToolStripMenuItem.Click += new System.EventHandler(this._OptionsToolStripMenuItem_Click);
+            // 
             // calculateToolStripMenuItem
             // 
             this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
-            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.calculateToolStripMenuItem.Text = "&Calculate";
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.clearToolStripMenuItem.Text = "C&lear";
             // 
             // helpToolStripMenuItem
@@ -381,18 +389,11 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this._aboutToolStripMenuItem_Click);
             // 
-            // _OptionsToolStripMenuItem
-            // 
-            this._OptionsToolStripMenuItem.Name = "_OptionsToolStripMenuItem";
-            this._OptionsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this._OptionsToolStripMenuItem.Text = "&Options";
-            this._OptionsToolStripMenuItem.Click += new System.EventHandler(this._OptionsToolStripMenuItem_Click);
-            // 
-            // AutoCenterForm
+            // SharpAutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -419,7 +420,7 @@
             this.Controls.Add(this.BasePriceTextBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "AutoCenterForm";
+            this.Name = "SharpAutoForm";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._AutoCenterForm_FormClosing);
             this.FeaturesBox.ResumeLayout(false);

@@ -9,10 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// Program: Sharp Auto Center
+/// Name: Justin Schieck
+/// StudentID: 200328630
+/// App Creation Date: Feb 02, 2013
+/// App Desc: Calculates the amount due from new or used car and choices.
+/// </summary>
 namespace Assignment02
 {
     public partial class SharpAutoForm : Form
     {
+
+        //Private Instance Variables
         private decimal _StereoSystemPrice = 500.00m;
         private decimal _LeatherIntPrice = 1502.99m;
         private decimal _ComputerNavPrice = 1241.23m;
@@ -29,6 +38,7 @@ namespace Assignment02
         private decimal _amountDue;
         private string _autoFormLayout;
 
+        //Public splashform variable.
         public SplashForm previousForm;
 
        
@@ -36,10 +46,12 @@ namespace Assignment02
         public SharpAutoForm()
         {
             InitializeComponent();
-
+            //sets default layout on startup
             this.AutoFormLayout = "Classic";
         }
 
+
+        //get and set for the form layout
         public object FormFontDialog { get; private set; }
         public string AutoFormLayout {
 
@@ -166,6 +178,7 @@ namespace Assignment02
             AmountDueTextBox.Text = _amountDue.ToString("C2");
             }
 
+        // sets all textboxs and options to clear or beginning positions.
         private void _ClearButton_Click(object sender, EventArgs e)
         {
             BasePriceTextBox.Text = "";
@@ -183,7 +196,11 @@ namespace Assignment02
             CustomizedDetailingButton.Checked = false;
         }
 
-
+        /// <summary>
+        /// about form button handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Creates the form
@@ -193,7 +210,11 @@ namespace Assignment02
             aboutForm.ShowDialog();
         }
 
-
+        /// <summary>
+        /// Close event handler. asks if sure you want to close
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _AutoCenterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -209,6 +230,12 @@ namespace Assignment02
             }
 
         }
+
+        /// <summary>
+        /// Exit button in menu event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -216,6 +243,11 @@ namespace Assignment02
                    
         }
 
+        /// <summary>
+        /// Options tool menu handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _OptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //creates a dialog container for debug
@@ -235,6 +267,8 @@ namespace Assignment02
             //For debugging
             Debug.WriteLine(result.ToString());
         }
+
+
     }
 }
 

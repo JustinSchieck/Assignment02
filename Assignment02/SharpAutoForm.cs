@@ -47,7 +47,7 @@ namespace Assignment02
         {
             InitializeComponent();
             //sets default layout on startup
-            this.AutoFormLayout = "Classic";
+           
         }
 
 
@@ -269,6 +269,54 @@ namespace Assignment02
         }
 
 
+        //font options for the edit menu
+        private void _calibriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmountDueTextBox.Font = new Font("Calabri", 12, FontStyle.Regular);
+            BasePriceTextBox.Font = new Font("Calabri", 12, FontStyle.Regular);
+
+        }
+
+        private void _timesNewRomanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmountDueTextBox.Font = new Font("TimesNewRoman", 12, FontStyle.Regular);
+            BasePriceTextBox.Font = new Font("TimesNewRoman", 12, FontStyle.Regular);
+
+        }
+
+        private void _arialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmountDueTextBox.Font = new Font("Arial", 12, FontStyle.Regular);
+            BasePriceTextBox.Font = new Font("Arial", 12, FontStyle.Regular);
+
+        }
+
+        private void _comicSansToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmountDueTextBox.Font = new Font("ComicSans", 12, FontStyle.Regular);
+            BasePriceTextBox.Font = new Font("ComicSans", 12, FontStyle.Regular);
+
+        }
+
+
+        //Color options for the Edit menu
+        private void _orangeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmountDueTextBox.BackColor = Color.Orange;
+            BasePriceTextBox.BackColor = Color.Orange;
+        }
+
+        private void _redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmountDueTextBox.BackColor = Color.Red;
+            BasePriceTextBox.BackColor = Color.Red;
+        }
+
+        private void _pinkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmountDueTextBox.BackColor = Color.HotPink;
+            BasePriceTextBox.BackColor = Color.HotPink;
+        }
     }
 }
 

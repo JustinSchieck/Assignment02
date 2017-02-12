@@ -64,6 +64,15 @@
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._calibriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._timesNewRomanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._arialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._comicSansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FeaturesBox.SuspendLayout();
             this.FinishBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -354,7 +363,9 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._OptionsToolStripMenuItem,
             this.calculateToolStripMenuItem,
-            this.clearToolStripMenuItem});
+            this.clearToolStripMenuItem,
+            this._fontToolStripMenuItem,
+            this._colorToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.editToolStripMenuItem.Text = "&Edit";
@@ -362,20 +373,20 @@
             // _OptionsToolStripMenuItem
             // 
             this._OptionsToolStripMenuItem.Name = "_OptionsToolStripMenuItem";
-            this._OptionsToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this._OptionsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this._OptionsToolStripMenuItem.Text = "&Options";
             this._OptionsToolStripMenuItem.Click += new System.EventHandler(this._OptionsToolStripMenuItem_Click);
             // 
             // calculateToolStripMenuItem
             // 
             this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
-            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.calculateToolStripMenuItem.Text = "&Calculate";
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.clearToolStripMenuItem.Text = "C&lear";
             // 
             // helpToolStripMenuItem
@@ -392,6 +403,76 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this._aboutToolStripMenuItem_Click);
+            // 
+            // _fontToolStripMenuItem
+            // 
+            this._fontToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._calibriToolStripMenuItem,
+            this._timesNewRomanToolStripMenuItem,
+            this._arialToolStripMenuItem,
+            this._comicSansToolStripMenuItem});
+            this._fontToolStripMenuItem.Name = "_fontToolStripMenuItem";
+            this._fontToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this._fontToolStripMenuItem.Text = "&Font";
+            // 
+            // _colorToolStripMenuItem
+            // 
+            this._colorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.redToolStripMenuItem,
+            this.orangeToolStripMenuItem,
+            this.pinkToolStripMenuItem});
+            this._colorToolStripMenuItem.Name = "_colorToolStripMenuItem";
+            this._colorToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this._colorToolStripMenuItem.Text = "C&olor";
+            // 
+            // _calibriToolStripMenuItem
+            // 
+            this._calibriToolStripMenuItem.Name = "_calibriToolStripMenuItem";
+            this._calibriToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this._calibriToolStripMenuItem.Text = "Calibri";
+            this._calibriToolStripMenuItem.Click += new System.EventHandler(this._calibriToolStripMenuItem_Click);
+            // 
+            // _timesNewRomanToolStripMenuItem
+            // 
+            this._timesNewRomanToolStripMenuItem.Name = "_timesNewRomanToolStripMenuItem";
+            this._timesNewRomanToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this._timesNewRomanToolStripMenuItem.Text = "Times New Roman";
+            this._timesNewRomanToolStripMenuItem.Click += new System.EventHandler(this._timesNewRomanToolStripMenuItem_Click);
+            // 
+            // _arialToolStripMenuItem
+            // 
+            this._arialToolStripMenuItem.Name = "_arialToolStripMenuItem";
+            this._arialToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this._arialToolStripMenuItem.Text = "Arial";
+            this._arialToolStripMenuItem.Click += new System.EventHandler(this._arialToolStripMenuItem_Click);
+            // 
+            // _comicSansToolStripMenuItem
+            // 
+            this._comicSansToolStripMenuItem.Name = "_comicSansToolStripMenuItem";
+            this._comicSansToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this._comicSansToolStripMenuItem.Text = "Comic Sans";
+            this._comicSansToolStripMenuItem.Click += new System.EventHandler(this._comicSansToolStripMenuItem_Click);
+            // 
+            // redToolStripMenuItem
+            // 
+            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.redToolStripMenuItem.Text = "re&d";
+            this.redToolStripMenuItem.Click += new System.EventHandler(this._redToolStripMenuItem_Click);
+            // 
+            // orangeToolStripMenuItem
+            // 
+            this.orangeToolStripMenuItem.Name = "orangeToolStripMenuItem";
+            this.orangeToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.orangeToolStripMenuItem.Text = "&orange";
+            this.orangeToolStripMenuItem.Click += new System.EventHandler(this._orangeToolStripMenuItem_Click);
+            // 
+            // pinkToolStripMenuItem
+            // 
+            this.pinkToolStripMenuItem.Name = "pinkToolStripMenuItem";
+            this.pinkToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.pinkToolStripMenuItem.Text = "&Pink";
+            this.pinkToolStripMenuItem.Click += new System.EventHandler(this._pinkToolStripMenuItem_Click);
             // 
             // SharpAutoForm
             // 
@@ -472,6 +553,15 @@
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _OptionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _fontToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _calibriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _timesNewRomanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _arialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _comicSansToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _colorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orangeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pinkToolStripMenuItem;
     }
 }
 
